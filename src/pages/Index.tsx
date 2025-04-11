@@ -11,6 +11,35 @@ import Header from "@/components/Header";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground font-tajawal">
+         <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahmoud Omar - Growth Marketing Specialist</title>
+    <meta name="description" content="Growth Manager, Social Commerce Expert & eCommerce Specialist with data-driven strategies to help your business grow." />
+    <meta name="author" content="Mahmoud Omar" />
+    <meta name="keywords" content="growth marketing, social commerce, ecommerce, digital marketing, growth hacking, Mahmoud Omar" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.ibb.co/HRFq0Zv/my-notion-face-customized.png" type="image/png" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mahmoudomar.com/" />
+    <meta property="og:title" content="Mahmoud Omar - Growth Marketing Specialist" />
+    <meta property="og:description" content="Growth Manager, Social Commerce Expert & eCommerce Specialist with data-driven strategies to help your business grow." />
+    <meta property="og:image" content="https://i.ibb.co/HRFq0Zv/my-notion-face-customized.png" />
+    <meta property="og:image:alt" content="Mahmoud Omar" />
+    <meta property="og:site_name" content="Mahmoud Omar" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@growthack88" />
+    <meta name="twitter:title" content="Mahmoud Omar - Growth Marketing Specialist" />
+    <meta name="twitter:description" content="Growth Manager, Social Commerce Expert & eCommerce Specialist with data-driven strategies to help your business grow." />
+    <meta name="twitter:image" content="https://i.ibb.co/HRFq0Zv/my-notion-face-customized.png" />
+    
+    <!-- WhatsApp specific (uses Open Graph but benefits from explicit dimension specifications) -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
       <Header />
       <main>
         <HeroSection />
