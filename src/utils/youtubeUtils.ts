@@ -20,35 +20,35 @@ export const fetchYouTubeVideos = async (
     const mockVideos: YouTubeVideo[] = [
       {
         id: "video1",
-        title: "How to Create Viral Content for Social Commerce",
+        title: "Growth Hacking Strategies for 2025",
         thumbnailUrl: "https://i.ytimg.com/vi/placeholder1/maxresdefault.jpg",
         publishedAt: "2025-04-08T12:00:00Z",
         videoUrl: `https://www.youtube.com/watch?v=placeholder1`
       },
       {
         id: "video2",
-        title: "Top 5 eCommerce Growth Strategies for 2025",
+        title: "Social Commerce: Complete Guide for Beginners",
         thumbnailUrl: "https://i.ytimg.com/vi/placeholder2/maxresdefault.jpg",
         publishedAt: "2025-04-02T15:30:00Z",
         videoUrl: `https://www.youtube.com/watch?v=placeholder2`
       },
       {
         id: "video3",
-        title: "Marketing Automation Tools You Need to Know",
+        title: "How to Build a Marketing Automation System",
         thumbnailUrl: "https://i.ytimg.com/vi/placeholder3/maxresdefault.jpg",
         publishedAt: "2025-03-25T09:45:00Z",
         videoUrl: `https://www.youtube.com/watch?v=placeholder3`
       },
       {
         id: "video4",
-        title: "Growth Hacking for Beginners: Ultimate Guide",
+        title: "Data-Driven Decision Making for Growth",
         thumbnailUrl: "https://i.ytimg.com/vi/placeholder4/maxresdefault.jpg",
         publishedAt: "2025-03-18T14:15:00Z",
         videoUrl: `https://www.youtube.com/watch?v=placeholder4`
       },
       {
         id: "video5",
-        title: "The Future of Social Commerce in 2025",
+        title: "Growth Hack Academy: eCommerce Conversion Strategies",
         thumbnailUrl: "https://i.ytimg.com/vi/placeholder5/maxresdefault.jpg",
         publishedAt: "2025-03-12T11:30:00Z",
         videoUrl: `https://www.youtube.com/watch?v=placeholder5`

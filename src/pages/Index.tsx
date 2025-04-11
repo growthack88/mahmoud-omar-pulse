@@ -5,6 +5,7 @@ import BlogSection from "@/components/BlogSection";
 import YouTubeSection from "@/components/YouTubeSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -18,12 +19,15 @@ const Index = () => {
         </div>
         <div className="container mx-auto px-4 mt-8">
           <div className="flex flex-col gap-6">
-            <BlogSection />
-            <ProjectsSection />
-            <YouTubeSection />
+            <div className="grid grid-cols-1 gap-6">
+              <ProjectsSection />
+              <BlogSection />
+              <YouTubeSection />
+            </div>
           </div>
         </div>
       </main>
+      <Footer />
       <ScrollToTop />
     </div>
   );
