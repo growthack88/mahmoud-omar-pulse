@@ -4,52 +4,50 @@ import { ChartBar, Settings, Database } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-background to-secondary/20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">About Mahmoud</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Growth strategist and digital marketing expert with a passion for data-driven solutions and automation.
-          </p>
-        </div>
+    <section id="about" className="py-8">
+      <div className="text-center mb-8">
+        <h2 className="text-2xl font-bold mb-2 text-gradient">About Mahmoud</h2>
+        <p className="text-base text-gray-600 max-w-2xl mx-auto">
+          Growth strategist and digital marketing expert with a passion for data-driven solutions and automation.
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <Card className="bg-white shadow-sm border-gray-100 card-hover">
+          <CardContent className="p-4 flex flex-col items-center text-center">
+            <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mb-3">
+              <ChartBar className="w-5 h-5 text-purple-600" />
+            </div>
+            <h3 className="text-base font-semibold mb-1">Growth Marketing</h3>
+            <p className="text-sm text-gray-600">
+              Creating scalable growth strategies across channels.
+            </p>
+          </CardContent>
+        </Card>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <Card className="bg-secondary/40 border-gray-700 card-hover">
-            <CardContent className="p-8 flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-full bg-brand-purple/20 flex items-center justify-center mb-6">
-                <ChartBar className="w-8 h-8 text-brand-purple" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Growth Marketing</h3>
-              <p className="text-gray-300">
-                Specialized in creating scalable growth strategies that deliver measurable results across channels.
-              </p>
-            </CardContent>
-          </Card>
-          
-          <Card className="bg-secondary/40 border-gray-700 card-hover">
-            <CardContent className="p-8 flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-full bg-brand-blue/20 flex items-center justify-center mb-6">
-                <Settings className="w-8 h-8 text-brand-blue" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Automation</h3>
-              <p className="text-gray-300">
-                Building systems that automate repetitive tasks, allowing businesses to focus on strategic growth.
-              </p>
-            </CardContent>
-          </Card>
-          
-          <Card className="bg-secondary/40 border-gray-700 card-hover">
-            <CardContent className="p-8 flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-full bg-brand-green/20 flex items-center justify-center mb-6">
-                <Database className="w-8 h-8 text-brand-green" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Data Driven</h3>
-              <p className="text-gray-300">
-                Leveraging analytics and insights to make informed decisions that optimize performance and ROI.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
+        <Card className="bg-white shadow-sm border-gray-100 card-hover">
+          <CardContent className="p-4 flex flex-col items-center text-center">
+            <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-3">
+              <Settings className="w-5 h-5 text-blue-600" />
+            </div>
+            <h3 className="text-base font-semibold mb-1">Automation</h3>
+            <p className="text-sm text-gray-600">
+              Building systems that automate repetitive tasks.
+            </p>
+          </CardContent>
+        </Card>
+        
+        <Card className="bg-white shadow-sm border-gray-100 card-hover">
+          <CardContent className="p-4 flex flex-col items-center text-center">
+            <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mb-3">
+              <Database className="w-5 h-5 text-green-600" />
+            </div>
+            <h3 className="text-base font-semibold mb-1">Data Driven</h3>
+            <p className="text-sm text-gray-600">
+              Leveraging analytics to optimize performance and ROI.
+            </p>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );

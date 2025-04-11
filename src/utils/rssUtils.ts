@@ -53,8 +53,16 @@ export const fetchBlogPosts = async (feedUrl: string): Promise<Post[]> => {
         }
       }
       
+      // For Whatzduck, check for enclosure tag which often contains the image
+      if (!imageUrl) {
+        const enclosure = item.querySelector("enclosure");
+        if (enclosure && enclosure.getAttribute("type")?.startsWith("image/")) {
+          imageUrl = enclosure.getAttribute("url") || "";
+        }
+      }
+      
       posts.push({
-        id: `post-${index}`,
+        id: `post-${index}-${new Date().getTime()}${Math.random().toString(36).substring(2, 15)}`,
         title,
         link,
         publishDate,

@@ -5,9 +5,9 @@ import { ArrowUp } from "lucide-react";
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when user scrolls down 500px
+  // Show button when user scrolls down 300px (reduced from 500px)
   const toggleVisibility = () => {
-    if (window.scrollY > 500) {
+    if (window.scrollY > 300) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -33,7 +33,7 @@ const ScrollToTop = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-brand-purple text-white shadow-lg hover:bg-brand-purple/90 transition-all duration-300 animate-fade-in-up"
+          className="fixed bottom-6 right-6 z-50 p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 text-gray-600 hover:text-gray-800"
           aria-label="Scroll to top"
         >
           <ArrowUp className="w-5 h-5" />

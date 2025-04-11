@@ -1,8 +1,8 @@
 
 import { useEffect, useState } from "react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Clock } from "lucide-react";
+import { ExternalLink, Clock, ArrowRight } from "lucide-react";
 import { fetchBlogPosts } from "@/utils/rssUtils";
 
 interface Post {
@@ -12,6 +12,7 @@ interface Post {
   publishDate: string;
   description: string;
   imageUrl?: string;
+  source?: string;
 }
 
 const BlogSection = () => {
@@ -21,10 +22,35 @@ const BlogSection = () => {
   useEffect(() => {
     const getBlogPosts = async () => {
       setLoading(true);
-      // Replace with actual RSS feed URL
-      const feedUrl = "https://growthhackacademy.com/feed/";
-      const fetchedPosts = await fetchBlogPosts(feedUrl);
-      setPosts(fetchedPosts);
+      try {
+        // Fetch from Growth Hack Academy feed
+        const ghaFeedUrl = "https://growthhackacademy.com/blog/feed";
+        const ghaFeedPosts = await fetchBlogPosts(ghaFeedUrl);
+        
+        // Fetch from Whatzduck feed
+        const whatzduckFeedUrl = "https://rss.beehiiv.com/feeds/PgJumZUfwU.xml";
+        const whatzduckFeedPosts = await fetchBlogPosts(whatzduckFeedUrl);
+        
+        // Add source to each post
+        const ghaPostsWithSource = ghaFeedPosts.map(post => ({
+          ...post,
+          source: "Growth Hack Academy"
+        }));
+        
+        const whatzduckPostsWithSource = whatzduckFeedPosts.map(post => ({
+          ...post,
+          source: "Whatzduck"
+        }));
+        
+        // Combine and sort all posts by date
+        const allPosts = [...ghaPostsWithSource, ...whatzduckPostsWithSource]
+          .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
+          .slice(0, 5); // Get only 5 most recent posts
+          
+        setPosts(allPosts);
+      } catch (error) {
+        console.error("Error fetching blog posts:", error);
+      }
       setLoading(false);
     };
 
@@ -45,95 +71,88 @@ const BlogSection = () => {
   };
 
   return (
-    <section id="blog" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">Latest Articles</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Insights and strategies to help you scale your digital presence and growth.
-          </p>
-        </div>
+    <section id="blog" className="py-8">
+      <h2 className="text-2xl font-bold mb-6 text-gradient">Latest Articles</h2>
 
-        {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[1, 2, 3].map((i) => (
-              <Card key={i} className="bg-secondary/40 border-gray-700 h-96 animate-pulse">
-                <div className="h-48 bg-gray-700/50 rounded-t-lg"></div>
-                <CardContent className="p-6">
-                  <div className="h-6 bg-gray-700/50 rounded mb-4 w-3/4"></div>
-                  <div className="h-4 bg-gray-700/50 rounded mb-2 w-full"></div>
-                  <div className="h-4 bg-gray-700/50 rounded mb-2 w-5/6"></div>
-                  <div className="h-4 bg-gray-700/50 rounded w-4/6"></div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        ) : posts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {posts.map((post) => (
-              <Card key={post.id} className="bg-secondary/40 border-gray-700 overflow-hidden card-hover">
-                <div className="h-48 bg-gray-700 relative">
-                  {post.imageUrl ? (
-                    <img 
-                      src={post.imageUrl} 
-                      alt={post.title} 
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="flex items-center justify-center h-full bg-brand-purple/20">
-                      <span className="text-2xl font-bold text-gradient">GHA</span>
-                    </div>
-                  )}
+      {loading ? (
+        <div className="space-y-4">
+          {[1, 2, 3].map((i) => (
+            <Card key={i} className="bg-white border-gray-100 h-24 animate-pulse">
+              <CardContent className="p-4 flex">
+                <div className="w-16 h-16 bg-gray-200 rounded mr-4"></div>
+                <div className="flex-1">
+                  <div className="h-4 bg-gray-200 rounded mb-2 w-3/4"></div>
+                  <div className="h-3 bg-gray-200 rounded mb-1 w-1/2"></div>
+                  <div className="h-3 bg-gray-200 rounded w-1/4"></div>
                 </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center text-sm text-gray-400 mb-3">
-                    <Clock className="w-4 h-4 mr-2" />
-                    <span>{formatDate(post.publishDate)}</span>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      ) : posts.length > 0 ? (
+        <div className="space-y-4">
+          {posts.map((post) => (
+            <Card key={post.id} className="bg-white border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+              <CardContent className="p-4">
+                <div className="flex items-start">
+                  <div className="w-16 h-16 bg-gray-100 rounded overflow-hidden shrink-0 mr-4">
+                    {post.imageUrl ? (
+                      <img 
+                        src={post.imageUrl} 
+                        alt={post.title} 
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="flex items-center justify-center h-full bg-purple-100">
+                        <span className="text-sm font-bold text-purple-600">
+                          {post.source === "Whatzduck" ? "WD" : "GHA"}
+                        </span>
+                      </div>
+                    )}
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 line-clamp-2">{post.title}</h3>
-                  <p className="text-gray-300 line-clamp-3">{post.description}</p>
-                </CardContent>
-                <CardFooter className="px-6 pb-6 pt-0">
-                  <a href={post.link} target="_blank" rel="noreferrer" className="w-full">
-                    <Button variant="outline" className="w-full border-gray-600 hover:bg-gray-800 flex items-center gap-2">
-                      <span>Read Article</span>
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
-                  </a>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center p-10 bg-secondary/20 rounded-lg max-w-3xl mx-auto">
-            <p className="text-gray-300">
-              Failed to load blog posts. Please try again later or visit the blog directly.
-            </p>
+                  <div className="flex-1">
+                    <div className="flex items-center text-xs text-gray-500 mb-1">
+                      <span className="inline-block px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 mr-2">
+                        {post.source}
+                      </span>
+                      <Clock className="w-3 h-3 mr-1" />
+                      <span>{formatDate(post.publishDate)}</span>
+                    </div>
+                    <h3 className="text-base font-medium mb-1 line-clamp-2">{post.title}</h3>
+                    <a href={post.link} target="_blank" rel="noreferrer" className="text-purple-600 text-sm flex items-center hover:underline">
+                      Read <ArrowRight className="w-3 h-3 ml-1" />
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      ) : (
+        <div className="text-center p-6 bg-purple-50 rounded-lg">
+          <p className="text-gray-600">
+            Failed to load blog posts. Please try again later or visit the blog directly.
+          </p>
+          <div className="flex justify-center gap-4 mt-4">
             <a 
               href="https://growthhackacademy.com/blog" 
               target="_blank" 
               rel="noreferrer"
-              className="text-brand-purple hover:text-brand-blue mt-4 inline-block"
+              className="text-purple-600 hover:text-purple-700 font-medium"
             >
-              Visit Blog
+              Visit GHA Blog
+            </a>
+            <a 
+              href="https://whatzduck.com" 
+              target="_blank" 
+              rel="noreferrer"
+              className="text-purple-600 hover:text-purple-700 font-medium"
+            >
+              Visit Whatzduck
             </a>
           </div>
-        )}
-        
-        <div className="text-center mt-12">
-          <a 
-            href="https://growthhackacademy.com/blog" 
-            target="_blank" 
-            rel="noreferrer"
-            className="inline-block"
-          >
-            <Button variant="secondary" className="flex items-center gap-2">
-              <span>View All Articles</span>
-              <ExternalLink className="w-4 h-4" />
-            </Button>
-          </a>
         </div>
-      </div>
+      )}
     </section>
   );
 };

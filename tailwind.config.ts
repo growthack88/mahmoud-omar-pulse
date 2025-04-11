@@ -63,15 +63,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Mahmoud Omar's website
+				// Custom colors for Mahmoud Omar's website - updated to light theme
 				brand: {
 					purple: "#8B5CF6",
 					blue: "#3182CE",
 					green: "#10B981",
-					red: "#ff0000",
-					dark: "#2b2a2b",
-					darkGray: "#1c1c1c",
-					lightGray: "#f3f3f3"
+					red: "#F87171",
+					dark: "#1e293b",
+					darkGray: "#334155",
+					lightGray: "#f1f5f9"
 				}
 			},
 			borderRadius: {
@@ -108,10 +108,10 @@ export default {
 				},
 				'pulse-slow': {
 					'0%, 100%': {
-						opacity: '1'
+						opacity: '0.8'
 					},
 					'50%': {
-						opacity: '0.8'
+						opacity: '0.4'
 					}
 				},
 				'float': {
@@ -145,9 +145,9 @@ export default {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'hero-pattern': "url('/images/hero-pattern.svg')",
-				'profile-gradient': 'linear-gradient(90deg, #3182ce, #805ad5)',
+				'profile-gradient': 'linear-gradient(90deg, #8B5CF6, #3182CE)',
 				'templify-gradient': 'linear-gradient(135deg, #10B981, #34D399)',
-				'youtube-gradient': 'linear-gradient(90deg, #ff0000, #cc0000)',
+				'youtube-gradient': 'linear-gradient(90deg, #F87171, #FB7185)',
 				'card-gradient': 'linear-gradient(to right, #4A00E0, #8E2DE2)'
 			}
 		}

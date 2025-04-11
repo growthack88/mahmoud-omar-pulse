@@ -4,19 +4,20 @@ import { ArrowDownCircle, ArrowRight, Linkedin, Facebook, Instagram, Youtube } f
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen pt-24 pb-16 overflow-hidden">
+    <section className="relative min-h-[85vh] py-16 overflow-hidden bg-secondary/30">
       {/* Animated background elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-purple/20 rounded-full filter blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-blue/20 rounded-full filter blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-purple-300/30 rounded-full filter blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-blue-300/30 rounded-full filter blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/3 left-1/2 w-64 h-64 bg-green-300/30 rounded-full filter blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
       </div>
       
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center text-center mt-8 md:mt-16">
+        <div className="flex flex-col items-center text-center mt-16">
           {/* Profile image */}
-          <div className="relative w-40 h-40 mb-8">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-brand-purple to-brand-blue animate-gradient-animation"></div>
-            <div className="absolute inset-1 rounded-full overflow-hidden bg-background">
+          <div className="relative w-32 h-32 mb-6">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#3182CE] animate-gradient-animation"></div>
+            <div className="absolute inset-1 rounded-full overflow-hidden bg-white">
               <img 
                 src="https://i.ibb.co/HRFq0Zv/my-notion-face-customized.png" 
                 alt="Mahmoud Omar" 
@@ -26,17 +27,17 @@ const HeroSection = () => {
           </div>
           
           {/* Main heading */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">
             <span className="text-gradient">Mahmoud Omar</span>
           </h1>
           
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-2xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Growth Manager · Social Commerce Guy · eCommerce Manager · Podcaster
           </p>
           
           {/* Social media links */}
-          <div className="flex justify-center space-x-4 mb-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className="flex justify-center space-x-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <a 
               href="https://www.linkedin.com/in/growthack88/" 
               target="_blank" 
@@ -72,29 +73,24 @@ const HeroSection = () => {
           </div>
           
           {/* Expertise tags */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <span className="tag bg-brand-purple/10 text-brand-purple">Growth Marketing</span>
-            <span className="tag bg-brand-blue/10 text-brand-blue">Automation</span>
-            <span className="tag bg-brand-green/10 text-brand-green">Data Driven</span>
+          <div className="flex flex-wrap justify-center gap-3 mb-10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <span className="tag bg-purple-100 text-purple-700 border border-purple-200">Growth Marketing</span>
+            <span className="tag bg-blue-100 text-blue-700 border border-blue-200">Automation</span>
+            <span className="tag bg-green-100 text-green-700 border border-green-200">Data Driven</span>
           </div>
           
           {/* Call to action */}
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <Button className="bg-gradient-to-r from-brand-purple to-brand-blue hover:opacity-90">
+          <div className="flex flex-col sm:flex-row gap-3 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+            <Button className="bg-gradient-to-r from-[#8B5CF6] to-[#3182CE] hover:opacity-90">
               <span>Schedule a Meeting</span>
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button variant="outline" className="border-gray-600 hover:bg-gray-800">
+            <Button variant="outline" className="border-gray-300 hover:bg-gray-100 text-gray-700">
               <span>Explore Content</span>
               <ArrowDownCircle className="ml-2 w-4 h-4" />
             </Button>
           </div>
         </div>
-      </div>
-      
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDownCircle className="w-8 h-8 text-gray-400" />
       </div>
     </section>
   );
