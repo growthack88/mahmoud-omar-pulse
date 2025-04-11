@@ -4,7 +4,6 @@ import AboutSection from "@/components/AboutSection";
 import BlogSection from "@/components/BlogSection";
 import YouTubeSection from "@/components/YouTubeSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import NewsletterSection from "@/components/NewsletterSection";
 import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
@@ -18,20 +17,11 @@ const Index = () => {
           </div>
         </div>
         <div className="container mx-auto px-4 mt-8">
-          <div className="flex flex-col md:flex-row gap-6">
-            <div className="md:w-2/3">
-              <BlogSection />
-            </div>
-            <div className="md:w-1/3">
-              <ProjectsSection />
-              <div className="mt-6">
-                <NewsletterSection />
-              </div>
-            </div>
+          <div className="flex flex-col gap-6">
+            <BlogSection />
+            <ProjectsSection />
+            <YouTubeSection />
           </div>
-        </div>
-        <div className="container mx-auto px-4 my-8">
-          <YouTubeSection />
         </div>
       </main>
       <ScrollToTop />

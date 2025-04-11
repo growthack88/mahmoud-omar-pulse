@@ -19,7 +19,8 @@ const YouTubeSection = () => {
   useEffect(() => {
     const getYouTubeVideos = async () => {
       setLoading(true);
-      const fetchedVideos = await fetchYouTubeVideos("@GrowthHackAcademy");
+      // Specifically request videos from GrowthHackAcademy channel
+      const fetchedVideos = await fetchYouTubeVideos("@GrowthHackAcademy", 5);
       setVideos(fetchedVideos);
       setLoading(false);
     };

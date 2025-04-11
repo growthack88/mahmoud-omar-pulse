@@ -40,55 +40,46 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">Projects & Services</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Explore my projects, tools, and services designed to help businesses grow.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {projects.map((project) => (
-            <Card 
-              key={project.id} 
-              className="overflow-hidden card-hover border-0"
-            >
-              <div className={`bg-gradient-to-r ${project.color} p-6 h-full`}>
-                <CardContent className="p-0 h-full flex flex-col">
-                  <div className="flex-1">
-                    {project.image ? (
-                      <div className="flex justify-center mb-6">
-                        <img 
-                          src={project.image} 
-                          alt={project.title} 
-                          className="h-16 w-auto object-contain"
-                        />
-                      </div>
-                    ) : (
-                      <div className="flex justify-center mb-6 text-white">
-                        {project.icon}
-                      </div>
-                    )}
-                    
-                    <h3 className="text-xl font-bold mb-3 text-white text-center">{project.title}</h3>
-                    <p className="text-white/90 text-center mb-6">{project.description}</p>
-                  </div>
-                  
-                  <div className="text-center">
-                    <a href={project.link} target="_blank" rel="noreferrer">
-                      <Button variant="default" className="bg-white text-gray-900 hover:bg-white/90 flex items-center gap-2">
-                        <span>Explore</span>
-                        <ExternalLink className="w-4 h-4" />
-                      </Button>
-                    </a>
-                  </div>
-                </CardContent>
+    <section className="py-8">
+      <h2 className="text-2xl font-bold mb-6 text-gradient">Projects & Services</h2>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {projects.map((project) => (
+          <Card 
+            key={project.id} 
+            className="bg-white overflow-hidden card-hover border border-gray-100 shadow-sm"
+          >
+            <CardContent className="p-4">
+              <div className="flex flex-col h-full">
+                <div className="mb-4 flex justify-center">
+                  {project.image ? (
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="h-12 w-auto object-contain"
+                    />
+                  ) : (
+                    <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${project.color} flex items-center justify-center text-white`}>
+                      {project.icon}
+                    </div>
+                  )}
+                </div>
+                
+                <h3 className="text-lg font-semibold mb-2 text-center text-gray-800">{project.title}</h3>
+                <p className="text-gray-600 text-sm mb-4 text-center flex-grow">{project.description}</p>
+                
+                <div className="text-center mt-auto">
+                  <a href={project.link} target="_blank" rel="noreferrer">
+                    <Button variant="outline" className="text-sm border-gray-200 hover:bg-gray-50 hover:text-gray-900 flex items-center gap-1">
+                      <span>Explore</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </Button>
+                  </a>
+                </div>
               </div>
-            </Card>
-          ))}
-        </div>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </section>
   );

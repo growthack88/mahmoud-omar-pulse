@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Clock, ArrowRight } from "lucide-react";
+import { ExternalLink, Clock, ArrowRight, Send } from "lucide-react";
 import { fetchBlogPosts } from "@/utils/rssUtils";
 
 interface Post {
@@ -23,7 +23,7 @@ const BlogSection = () => {
     const getBlogPosts = async () => {
       setLoading(true);
       try {
-        // Fetch from Growth Hack Academy feed
+        // Fetch from Growth Hack Academy feed - direct WordPress URL
         const ghaFeedUrl = "https://growthhackacademy.com/blog/feed";
         const ghaFeedPosts = await fetchBlogPosts(ghaFeedUrl);
         
@@ -102,26 +102,50 @@ const BlogSection = () => {
                         alt={post.title} 
                         className="w-full h-full object-cover"
                       />
+                    ) : post.source === "Whatzduck" ? (
+                      <div className="flex items-center justify-center h-full bg-yellow-100">
+                        <span className="text-yellow-600 text-xl" role="img" aria-label="duck">🦆</span>
+                      </div>
                     ) : (
                       <div className="flex items-center justify-center h-full bg-purple-100">
                         <span className="text-sm font-bold text-purple-600">
-                          {post.source === "Whatzduck" ? "WD" : "GHA"}
+                          GHA
                         </span>
                       </div>
                     )}
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center text-xs text-gray-500 mb-1">
-                      <span className="inline-block px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 mr-2">
+                      <span className={`inline-block px-2 py-0.5 rounded-full mr-2 ${
+                        post.source === "Whatzduck" 
+                          ? "bg-yellow-100 text-yellow-600" 
+                          : "bg-gray-100 text-gray-600"
+                      }`}>
                         {post.source}
                       </span>
                       <Clock className="w-3 h-3 mr-1" />
                       <span>{formatDate(post.publishDate)}</span>
                     </div>
                     <h3 className="text-base font-medium mb-1 line-clamp-2">{post.title}</h3>
-                    <a href={post.link} target="_blank" rel="noreferrer" className="text-purple-600 text-sm flex items-center hover:underline">
-                      Read <ArrowRight className="w-3 h-3 ml-1" />
-                    </a>
+                    <div className="flex justify-between items-center">
+                      <a href={post.link} target="_blank" rel="noreferrer" className="text-purple-600 text-sm flex items-center hover:underline">
+                        Read <ArrowRight className="w-3 h-3 ml-1" />
+                      </a>
+                      
+                      {post.source === "Whatzduck" && (
+                        <a href="https://whatzduck.com/subscribe" target="_blank" rel="noreferrer" className="text-yellow-600 text-xs flex items-center">
+                          <Send className="w-3 h-3 mr-1" />
+                          Subscribe
+                        </a>
+                      )}
+                      
+                      {post.source === "Growth Hack Academy" && (
+                        <a href="https://growthhackacademy.com/blog" target="_blank" rel="noreferrer" className="text-purple-600 text-xs flex items-center">
+                          <Send className="w-3 h-3 mr-1" />
+                          Subscribe
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </CardContent>
