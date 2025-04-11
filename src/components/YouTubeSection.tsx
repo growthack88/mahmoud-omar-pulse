@@ -70,7 +70,7 @@ const YouTubeSection = () => {
   return (
     <section id="videos" className="py-8">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-gradient">Latest Videos</h2>
+        <h2 className="text-2xl font-bold text-gradient font-tajawal">فيديوهات جروث هاك أكاديمي</h2>
         <a 
           href="https://www.youtube.com/@GrowthHackAcademy?sub_confirmation=1" 
           target="_blank" 
@@ -79,7 +79,7 @@ const YouTubeSection = () => {
         >
           <Button variant="outline" size="sm" className="border-red-300 text-red-600 hover:bg-red-50 flex items-center gap-1">
             <Youtube className="w-4 h-4" />
-            <span>Subscribe</span>
+            <span className="font-tajawal">اشترك</span>
           </Button>
         </a>
       </div>
@@ -117,7 +117,7 @@ const YouTubeSection = () => {
                 </div>
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-medium line-clamp-1">{video.title}</h3>
+                <h3 className="text-sm font-medium line-clamp-1 font-tajawal">{video.title}</h3>
                 <div className="flex items-center text-xs text-gray-500 mt-1">
                   <Calendar className="w-3 h-3 mr-1" />
                   <span>{formatPublishedDate(video.publishedAt)}</span>
@@ -129,16 +129,16 @@ const YouTubeSection = () => {
         </div>
       ) : (
         <div className="text-center p-6 bg-red-50 rounded-lg">
-          <p className="text-gray-600">
-            Failed to load videos. Please visit the YouTube channel directly.
+          <p className="text-gray-600 font-tajawal">
+            فشل في تحميل الفيديوهات. يرجى زيارة قناة اليوتيوب مباشرة.
           </p>
           <a 
             href="https://www.youtube.com/@GrowthHackAcademy" 
             target="_blank" 
             rel="noreferrer"
-            className="text-red-600 hover:text-red-700 mt-4 inline-block font-medium"
+            className="text-red-600 hover:text-red-700 mt-4 inline-block font-medium font-tajawal"
           >
-            Visit YouTube Channel
+            زيارة قناة اليوتيوب
           </a>
         </div>
       )}

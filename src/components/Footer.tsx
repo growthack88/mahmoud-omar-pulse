@@ -1,5 +1,5 @@
 
-import { Linkedin, Facebook, Instagram, Youtube } from "lucide-react";
+import { Linkedin, Facebook, Instagram, Youtube, TikTok } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -37,6 +37,15 @@ const Footer = () => {
               aria-label="Instagram"
             >
               <Instagram className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://www.tiktok.com/@growthhackacademy" 
+              target="_blank" 
+              rel="noreferrer"
+              className="social-icon bg-[#000000]/10 hover:bg-[#000000]/20 text-black"
+              aria-label="TikTok"
+            >
+              <TikTok className="w-5 h-5" />
             </a>
             <a 
               href="https://www.youtube.com/@GrowthHackAcademy?sub_confirmation=1" 

@@ -6,10 +6,12 @@ import YouTubeSection from "@/components/YouTubeSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground font-tajawal">
+      <Header />
       <main>
         <HeroSection />
         <div className="container mx-auto px-4">
@@ -19,8 +21,8 @@ const Index = () => {
         </div>
         <div className="container mx-auto px-4 mt-8">
           <div className="flex flex-col gap-6">
+            <ProjectsSection />
             <div className="grid grid-cols-1 gap-6" id="articles">
-              <ProjectsSection />
               <BlogSection />
               <YouTubeSection />
             </div>

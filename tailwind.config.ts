@@ -19,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'tajawal': ['Tajawal', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -71,7 +74,8 @@ export default {
 					red: "#F87171",
 					dark: "#1e293b",
 					darkGray: "#334155",
-					lightGray: "#f1f5f9"
+					lightGray: "#f1f5f9",
+					yellow: "#FACC15" // Adding yellow for duck-themed elements
 				}
 			},
 			borderRadius: {
