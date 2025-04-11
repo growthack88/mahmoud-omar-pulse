@@ -24,7 +24,7 @@ const AboutSection = () => {
       title: "Building a Growth Machine",
       description: "Learn how to build a scalable growth system for your business with proven frameworks.",
       icon: <Database className="w-5 h-5 text-green-600" />,
-      link: "#",
+      link: "https://growthhackacademy.com/funnel/bgm/building-growth-machine/",
     },
   ];
 
