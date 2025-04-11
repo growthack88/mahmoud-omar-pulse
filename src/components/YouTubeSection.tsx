@@ -21,42 +21,42 @@ const YouTubeSection = () => {
     const hardcodedVideos = [
       {
         id: "mDQ0bvSpq98",
-        title: "A day in the life of a Growth Marketer",
+        title: "🧩 Rubik's Cube Growth Plan: Free 7-Step Plan Template | خطة النمو السريع من 7 خطوات كمكعب روبيك 🚀",
         thumbnailUrl: "https://img.youtube.com/vi/mDQ0bvSpq98/mqdefault.jpg",
         publishedAt: "2025-04-01T12:00:00Z",
         videoUrl: "https://www.youtube.com/watch?v=mDQ0bvSpq98"
       },
       {
         id: "xjL0XrbRAnQ",
-        title: "Growth Hacking Strategies for 2025",
+        title: "Google Like a Pro – All Advanced Search Operators - احترف البحث في جوجل بدون ادوات مدفوعة",
         thumbnailUrl: "https://img.youtube.com/vi/xjL0XrbRAnQ/mqdefault.jpg",
         publishedAt: "2025-03-25T12:00:00Z",
         videoUrl: "https://www.youtube.com/watch?v=xjL0XrbRAnQ"
       },
       {
         id: "7HY-hK8DEJw",
-        title: "Social Media Trends to Watch",
+        title: "تعرف انه سبوتيفاي يعرف عنك اكتر من اللي انت تعرفه عن نفسك؟ - Data Driven Ad Campaigns",
         thumbnailUrl: "https://img.youtube.com/vi/7HY-hK8DEJw/mqdefault.jpg",
         publishedAt: "2025-03-18T12:00:00Z",
         videoUrl: "https://www.youtube.com/watch?v=7HY-hK8DEJw"
       },
       {
         id: "ptuJzbEdxGY",
-        title: "eCommerce Marketing Tips",
+        title: "١١ استراتيجي هتساعدك على نجاح متجرك الالكتروني - eCommerce Marketing Strategies",
         thumbnailUrl: "https://img.youtube.com/vi/ptuJzbEdxGY/mqdefault.jpg",
         publishedAt: "2025-03-10T12:00:00Z",
         videoUrl: "https://www.youtube.com/watch?v=ptuJzbEdxGY"
       },
       {
         id: "m6QEeT9MGxM",
-        title: "Content Marketing in 2025",
+        title: "دليلك لو عايز تبدآ تشتغل ال Media Buying",
         thumbnailUrl: "https://img.youtube.com/vi/m6QEeT9MGxM/mqdefault.jpg",
         publishedAt: "2025-03-05T12:00:00Z",
         videoUrl: "https://www.youtube.com/watch?v=m6QEeT9MGxM"
       },
       {
         id: "oMoIFqphp9I",
-        title: "How to Build a Personal Brand",
+        title: "eCommerce eco-System | ايه اللي محتاج تفهمه قبل ما تبدآ في الايكومرس",
         thumbnailUrl: "https://img.youtube.com/vi/oMoIFqphp9I/mqdefault.jpg",
         publishedAt: "2025-02-28T12:00:00Z",
         videoUrl: "https://www.youtube.com/watch?v=oMoIFqphp9I"

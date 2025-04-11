@@ -1,7 +1,7 @@
 
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Calendar } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
@@ -20,21 +20,6 @@ const ProjectsSection = () => {
       image: "https://growthhackacademy.com/wp-content/uploads/2025/03/GHA-new.png",
       link: "https://growthhackacademy.com/internship",
       color: "bg-[#F8F9FA]"
-    },
-    {
-      id: 3,
-      title: "Schedule Meeting",
-      description: "Book a consultation or collaboration session directly on my calendar.",
-      link: "https://tidycal.com/growthack88",
-      color: "bg-[#F8F9FA]"
-    },
-    {
-      id: 4,
-      title: "Explore Content",
-      description: "Check out my latest articles, blogs and educational content.",
-      link: "#articles",
-      isInternal: true,
-      color: "bg-[#F8F9FA]"
     }
   ];
 
@@ -47,7 +32,7 @@ const ProjectsSection = () => {
           <a 
             key={project.id} 
             href={project.link} 
-            target={project.isInternal ? "_self" : "_blank"} 
+            target="_blank" 
             rel="noreferrer"
             className="block"
           >
@@ -74,11 +59,7 @@ const ProjectsSection = () => {
                     className="text-sm border-gray-200 bg-white hover:bg-gray-50 hover:text-gray-900 flex items-center gap-1"
                   >
                     <span className="font-tajawal">استكشف</span>
-                    {project.isInternal ? (
-                      <Calendar className="w-3 h-3" />
-                    ) : (
-                      <ExternalLink className="w-3 h-3" />
-                    )}
+                    <ExternalLink className="w-3 h-3" />
                   </Button>
                 </div>
               </div>
