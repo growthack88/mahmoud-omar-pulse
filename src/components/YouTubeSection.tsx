@@ -116,10 +116,11 @@ const YouTubeSection = () => {
                   <Play className="w-4 h-4 text-white" />
                 </div>
               </div>
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0 rtl">
                 <h3 
                   className="text-sm font-medium line-clamp-1 font-tajawal text-right" 
                   dir="rtl"
+                  lang="ar"
                 >
                   {video.title}
                 </h3>
@@ -127,8 +128,8 @@ const YouTubeSection = () => {
                   className="flex items-center text-xs text-gray-500 mt-1 justify-end" 
                   dir="rtl"
                 >
-                  <Calendar className="w-3 h-3 mr-1" />
                   <span>{formatPublishedDate(video.publishedAt)}</span>
+                  <Calendar className="w-3 h-3 ml-1 mr-0" />
                 </div>
               </div>
               <ExternalLink className="w-4 h-4 text-gray-400 ml-2 flex-shrink-0" />
@@ -155,4 +156,3 @@ const YouTubeSection = () => {
 };
 
 export default YouTubeSection;
-

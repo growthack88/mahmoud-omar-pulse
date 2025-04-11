@@ -66,7 +66,7 @@ export const fetchYouTubeVideos = async (
 export const formatPublishedDate = (isoDate: string): string => {
   try {
     const date = new Date(isoDate);
-    return new Intl.DateTimeFormat('en-US', { 
+    return new Intl.DateTimeFormat('ar-EG', { 
       month: 'short', 
       day: 'numeric', 
       year: 'numeric' 
