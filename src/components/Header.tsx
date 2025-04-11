@@ -34,11 +34,6 @@ const Header = () => {
         <div className="flex items-center">
           <span className="text-xl font-bold text-gradient">Mahmoud Omar</span>
         </div>
-        
-        <Button size="sm" variant="secondary" className="hidden md:flex items-center gap-2">
-          <span>Connect</span>
-          <ChevronRight className="w-4 h-4" />
-        </Button>
       </div>
     </header>
   );
