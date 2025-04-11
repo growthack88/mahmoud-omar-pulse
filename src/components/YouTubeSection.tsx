@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { fetchYouTubeVideos, formatPublishedDate } from "@/utils/youtubeUtils";
+import { formatPublishedDate } from "@/utils/youtubeUtils";
 import { ExternalLink, Youtube, Play, Calendar } from "lucide-react";
 
 interface YouTubeVideo {
@@ -17,15 +17,54 @@ const YouTubeSection = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getYouTubeVideos = async () => {
-      setLoading(true);
-      // Specifically request videos from GrowthHackAcademy channel
-      const fetchedVideos = await fetchYouTubeVideos("@GrowthHackAcademy", 5);
-      setVideos(fetchedVideos);
-      setLoading(false);
-    };
-
-    getYouTubeVideos();
+    // Hard-coded videos as specified by the user
+    const hardcodedVideos = [
+      {
+        id: "mDQ0bvSpq98",
+        title: "A day in the life of a Growth Marketer",
+        thumbnailUrl: "https://img.youtube.com/vi/mDQ0bvSpq98/mqdefault.jpg",
+        publishedAt: "2025-04-01T12:00:00Z",
+        videoUrl: "https://www.youtube.com/watch?v=mDQ0bvSpq98"
+      },
+      {
+        id: "xjL0XrbRAnQ",
+        title: "Growth Hacking Strategies for 2025",
+        thumbnailUrl: "https://img.youtube.com/vi/xjL0XrbRAnQ/mqdefault.jpg",
+        publishedAt: "2025-03-25T12:00:00Z",
+        videoUrl: "https://www.youtube.com/watch?v=xjL0XrbRAnQ"
+      },
+      {
+        id: "7HY-hK8DEJw",
+        title: "Social Media Trends to Watch",
+        thumbnailUrl: "https://img.youtube.com/vi/7HY-hK8DEJw/mqdefault.jpg",
+        publishedAt: "2025-03-18T12:00:00Z",
+        videoUrl: "https://www.youtube.com/watch?v=7HY-hK8DEJw"
+      },
+      {
+        id: "ptuJzbEdxGY",
+        title: "eCommerce Marketing Tips",
+        thumbnailUrl: "https://img.youtube.com/vi/ptuJzbEdxGY/mqdefault.jpg",
+        publishedAt: "2025-03-10T12:00:00Z",
+        videoUrl: "https://www.youtube.com/watch?v=ptuJzbEdxGY"
+      },
+      {
+        id: "m6QEeT9MGxM",
+        title: "Content Marketing in 2025",
+        thumbnailUrl: "https://img.youtube.com/vi/m6QEeT9MGxM/mqdefault.jpg",
+        publishedAt: "2025-03-05T12:00:00Z",
+        videoUrl: "https://www.youtube.com/watch?v=m6QEeT9MGxM"
+      },
+      {
+        id: "oMoIFqphp9I",
+        title: "How to Build a Personal Brand",
+        thumbnailUrl: "https://img.youtube.com/vi/oMoIFqphp9I/mqdefault.jpg",
+        publishedAt: "2025-02-28T12:00:00Z",
+        videoUrl: "https://www.youtube.com/watch?v=oMoIFqphp9I"
+      }
+    ];
+    
+    setVideos(hardcodedVideos);
+    setLoading(false);
   }, []);
 
   return (
@@ -68,8 +107,13 @@ const YouTubeSection = () => {
               className="bg-white border border-gray-100 p-3 rounded-lg flex items-center hover:shadow-md transition-shadow block"
             >
               <div className="relative w-20 h-12 mr-3 rounded overflow-hidden bg-gray-100 flex-shrink-0">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Play className="w-4 h-4 text-red-600" />
+                <img 
+                  src={video.thumbnailUrl} 
+                  alt={video.title} 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/10 transition-colors">
+                  <Play className="w-4 h-4 text-white" />
                 </div>
               </div>
               <div className="flex-1 min-w-0">

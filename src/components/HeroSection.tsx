@@ -81,14 +81,18 @@ const HeroSection = () => {
           
           {/* Call to action */}
           <div className="flex flex-col sm:flex-row gap-3 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <Button className="bg-gradient-to-r from-[#8B5CF6] to-[#3182CE] hover:opacity-90">
-              <span>Schedule a Meeting</span>
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-            <Button variant="outline" className="border-gray-300 hover:bg-gray-100 text-gray-700">
-              <span>Explore Content</span>
-              <ArrowDownCircle className="ml-2 w-4 h-4" />
-            </Button>
+            <a href="https://tidycal.com/growthack88" target="_blank" rel="noreferrer">
+              <Button className="bg-gradient-to-r from-[#8B5CF6] to-[#3182CE] hover:opacity-90">
+                <span>Schedule a Meeting</span>
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
+            <a href="#articles">
+              <Button variant="outline" className="border-gray-300 hover:bg-gray-100 text-gray-700">
+                <span>Explore Content</span>
+                <ArrowDownCircle className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
           </div>
         </div>
       </div>

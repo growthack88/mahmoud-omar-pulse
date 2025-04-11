@@ -19,7 +19,7 @@ const Index = () => {
         </div>
         <div className="container mx-auto px-4 mt-8">
           <div className="flex flex-col gap-6">
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 gap-6" id="articles">
               <ProjectsSection />
               <BlogSection />
               <YouTubeSection />
