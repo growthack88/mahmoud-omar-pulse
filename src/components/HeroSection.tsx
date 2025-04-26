@@ -36,7 +36,7 @@ const HeroSection = () => {
             Passionate Growth Enthusiast | Navigating Social Commerce & Performance Marketing | Spreading eCommerce Magic | Embracing Startup Adventures | Crafting Marketing Automation Wonders | Exploring SAAS Realms 🚀☕
           </p>
 
-    <div className="mt-6">
+  <div className="flex justify-center space-x-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
         <a
           href="https://growthhackacademy.com/funnel/bgm/building-growth-machine/?op3_vid=1366"
           className="inline-flex items-center justify-center bg-gradient-to-r from-growth-blue to-growth-light-blue text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300"
