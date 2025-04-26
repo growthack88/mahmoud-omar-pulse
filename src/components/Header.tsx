@@ -30,7 +30,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <img 
-            src="https://i.ibb.co/HRFq0Zv/my-notion-face-customized.png" 
+            src="https://growthhack.pro/mine-notion.png" 
             alt="Mahmoud Omar" 
             className="w-8 h-8 rounded-full"
           />
