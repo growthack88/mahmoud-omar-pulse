@@ -35,6 +35,15 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-2xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Passionate Growth Enthusiast | Navigating Social Commerce & Performance Marketing | Spreading eCommerce Magic | Embracing Startup Adventures | Crafting Marketing Automation Wonders | Exploring SAAS Realms 🚀☕
           </p>
+
+    <div className="mt-6">
+        <a
+          href="https://growthhackacademy.com/funnel/bgm/building-growth-machine/?op3_vid=1366"
+          className="inline-flex items-center justify-center bg-gradient-to-r from-growth-blue to-growth-light-blue text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300"
+        >
+          Building Growth Machine
+        </a>
+      </div>
           
           {/* Social media links */}
           <div className="flex justify-center space-x-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
@@ -71,14 +80,7 @@ const HeroSection = () => {
               <Youtube className="w-5 h-5" />
             </a>
           </div>
-          <div className="mt-6">
-        <a
-          href="https://growthhackacademy.com/funnel/bgm/building-growth-machine/?op3_vid=1366"
-          className="inline-flex items-center justify-center bg-gradient-to-r from-growth-blue to-growth-light-blue text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300"
-        >
-          Building Growth Machine
-        </a>
-      </div>
+      
           
           {/* Expertise tags */}
           <div className="flex flex-wrap justify-center gap-3 mb-10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
