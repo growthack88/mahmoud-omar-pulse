@@ -19,7 +19,7 @@ const HeroSection = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#3182CE] animate-gradient-animation"></div>
             <div className="absolute inset-1 rounded-full overflow-hidden bg-white">
               <img 
-                src="https://i.ibb.co/HRFq0Zv/my-notion-face-customized.png" 
+                src="https://growthhack.pro/mine-notion.png" 
                 alt="Mahmoud Omar" 
                 className="w-full h-full object-cover"
               />
