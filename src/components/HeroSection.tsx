@@ -71,6 +71,14 @@ const HeroSection = () => {
               <Youtube className="w-5 h-5" />
             </a>
           </div>
+          <div className="mt-6">
+        <a
+          href="https://growthhackacademy.com/funnel/bgm/building-growth-machine/?op3_vid=1366"
+          className="inline-flex items-center justify-center bg-gradient-to-r from-growth-blue to-growth-light-blue text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300"
+        >
+          Building Growth Machine
+        </a>
+      </div>
           
           {/* Expertise tags */}
           <div className="flex flex-wrap justify-center gap-3 mb-10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
