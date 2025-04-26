@@ -33,7 +33,7 @@ const HeroSection = () => {
           
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-2xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Growth Manager · Social Commerce Guy · eCommerce Manager · Podcaster
+            Passionate Growth Enthusiast | Navigating Social Commerce & Performance Marketing | Spreading eCommerce Magic | Embracing Startup Adventures | Crafting Marketing Automation Wonders | Exploring SAAS Realms 🚀☕
           </p>
           
           {/* Social media links */}
