@@ -28,8 +28,8 @@ const Index = () => {
         <meta property="og:url" content="https://mahmoudomar.com/" />
         <meta property="og:title" content="Mahmoud Omar - Growth Marketing Specialist" />
         <meta property="og:description" content="Growth Manager, Social Commerce Expert & eCommerce Specialist with data-driven strategies to help your business grow." />
-        <meta property="og:image" content="https://i.ibb.co/HRFq0Zv/my-notion-face-customized.png" />
-        <meta property="og:image:alt" content="Mahmoud Omar" />
+        <meta property="og:image" content="/lovable-uploads/7f3a032d-df5e-48ee-a3fa-2baafc518a00.png" />
+        <meta property="og:image:alt" content="صوت البطة - Mahmoud Omar" />
         <meta property="og:site_name" content="Mahmoud Omar" />
 
         {/* Twitter */}
@@ -37,7 +37,7 @@ const Index = () => {
         <meta name="twitter:site" content="@growthack88" />
         <meta name="twitter:title" content="Mahmoud Omar - Growth Marketing Specialist" />
         <meta name="twitter:description" content="Growth Manager, Social Commerce Expert & eCommerce Specialist with data-driven strategies to help your business grow." />
-        <meta name="twitter:image" content="https://i.ibb.co/HRFq0Zv/my-notion-face-customized.png" />
+        <meta name="twitter:image" content="/lovable-uploads/7f3a032d-df5e-48ee-a3fa-2baafc518a00.png" />
         
         {/* WhatsApp specific (uses Open Graph but benefits from explicit dimension specifications) */}
         <meta property="og:image:width" content="1200" />
