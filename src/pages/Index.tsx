@@ -47,26 +47,28 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <div className="container mx-auto px-4">
-          <div className="relative z-10 -mt-20">
-            {/* Duck Logo Section */}
-            <div className="text-center mb-8">
-              <a 
-                href="https://whatzduck.com" 
-                target="_blank" 
-                rel="noreferrer"
-                className="inline-block hover:scale-105 transition-transform duration-300"
-              >
-                <img 
-                  src="/lovable-uploads/7f3a032d-df5e-48ee-a3fa-2baafc518a00.png" 
-                  alt="Duck Logo" 
-                  className="w-16 h-16 mx-auto mb-2"
-                />
-                <h2 className="text-xl font-bold text-gradient font-tajawal">صوت البطة</h2>
-              </a>
-            </div>
-            <AboutSection />
+        <div className="container mx-auto px-4 mt-8">
+          {/* Duck Logo Section */}
+          <div className="flex justify-center mb-8">
+            <a 
+              href="https://whatzduck.com" 
+              target="_blank" 
+              rel="noreferrer"
+              className="block"
+            >
+              <div className="bg-white shadow-sm border border-gray-100 rounded-lg p-6 hover:shadow-md transition-shadow duration-300 card-hover">
+                <div className="flex flex-col items-center text-center">
+                  <img 
+                    src="/lovable-uploads/7f3a032d-df5e-48ee-a3fa-2baafc518a00.png" 
+                    alt="Duck Logo" 
+                    className="w-16 h-16 mb-3"
+                  />
+                  <h2 className="text-xl font-bold text-gradient font-tajawal">صوت البطة</h2>
+                </div>
+              </div>
+            </a>
           </div>
+          <AboutSection />
         </div>
         <div className="container mx-auto px-4 mt-8">
           <div className="flex flex-col gap-6">
